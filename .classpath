@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="dist/|environment/|environment/web/|src/com/jjw/webservice/controller/|src/com/jjw/webservice/dao/|src/com/jjw/webservice/dao/impl/|src/com/jjw/webservice/dao/rowmapper/|src/com/jjw/webservice/pojo/|src/com/jjw/webservice/|src/com/jjw/|src/com/|src/|src/" kind="src" path=""/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
