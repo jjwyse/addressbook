@@ -1,0 +1,63 @@
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+   http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
+
+   <display-name>Address Book</display-name>
+
+   <!-- Welcome screen points to index.jsp -->
+   <welcome-file-list>
+      <welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
+   </welcome-file-list>
+
+   <!-- Setup servlet mappings -->
+   <servlet>
+      <servlet-name>rest</servlet-name>
+      <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>rest</servlet-name>
+      <url-pattern>/service/*</url-pattern>
+   </servlet-mapping>
+
+   <!-- Load in our application context files -->
+   <context-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+         /WEB-INF/security-application-context.xml
+      </param-value>
+   </context-param>
+
+   <listener>
+      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+   </listener>
+
+   <!-- Setup log4j configuration -->
+   <context-param>
+      <param-name>log4jConfigLocation</param-name>
+      <param-value>file:${webservice.log4j.file}</param-value>
+   </context-param>
+
+   <listener>
+      <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+   </listener>
+
+   <!-- Setup spring security to force people to authenticate against any services -->
+   <filter>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+   </filter>
+
+   <filter-mapping>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <url-pattern>/service/*</url-pattern>
+   </filter-mapping>
+
+   <!-- - Publishes events for session creation and destruction through the application context. Optional unless concurrent 
+      session control is being used. -->
+   <listener>
+      <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+   </listener>
+
+</web-app>

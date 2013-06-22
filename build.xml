@@ -1,0 +1,92 @@
+<project name="com.jjw.webservice build file" basedir="." default="all">
+   <description>
+      This is the build file for the com.jjw.webservice sub-component.
+   </description>
+   <property environment="env" />
+
+   <!-- Specify the cpc name -->
+   <property name="component" value="com.jjw.webservice" />
+   <echo message="${component}" />
+
+   <!-- Grab user's personal properties -->
+   <property file="build.${env.USER}.properties" />
+
+   <!-- Setup common properties -->
+   <property name="jjw.dir" value="${env.JJW_DIR}" />
+   <property name="common.dir" value="${jjw.dir}/common" />
+   <property file="${common.dir}/common-build.properties" />
+   <property file="build.properties" />
+
+   <!-- Setup compile classpath -->
+   <path id="compile.classpath">
+      <fileset dir="${cots.dir}" includes="**/*.jar" />
+   </path>
+
+   <!-- Setup the files to end up in the deploy/${component}/config directory -->
+   <path id="configtodeploy">
+      <pathelement path="${log4j.config.file}" />
+      <pathelement path="${setenv.sh}" />
+      <pathelement path="${application.properties}" />
+   </path>
+   <property name="config.to.deploy" refid="configtodeploy" />
+
+   <!-- Setup the files to end up in the deploy/${component}/bin directory -->
+   <path id="bintodeploy">
+   </path>
+   <property name="bin.to.deploy" refid="bintodeploy" />
+
+   <!-- Define all of the files you want to end up in WEB-INF/lib -->
+   <path id="libtodeploy">
+      <pathelement path="${log4j.jar}" />
+      <pathelement path="${commons.logging.jar}" />
+      <pathelement path="${spring.aop.jar}" />
+      <pathelement path="${spring.beans.jar}" />
+      <pathelement path="${spring.core.jar}" />
+      <pathelement path="${spring.context.jar}" />
+      <pathelement path="${spring.expression.jar}" />
+      <pathelement path="${spring.jdbc.jar}" />
+      <pathelement path="${spring.tx.jar}" />
+      <pathelement path="${spring.webmvc.jar}" />
+      <pathelement path="${spring.web.jar}" />
+      <pathelement path="${spring.security.acl.jar}" />
+      <pathelement path="${spring.security.config.jar}" />
+      <pathelement path="${spring.security.core.jar}" />
+      <pathelement path="${spring.security.taglibs.jar}" />
+      <pathelement path="${spring.security.web.jar}" />
+      <pathelement path="${jjw.webservice.jar}" />
+      <pathelement path="${mysql.connector.jar}" />
+   </path>
+   <property name="lib.to.deploy" refid="libtodeploy" />
+
+   <!-- Load in the common build file -->
+   <import file="${common.dir}/common-build.xml" as="common-build" />
+
+   <!-- Target: deploy -->
+   <target name="deploy" depends="common-build.deploy, war, deploy-war" />
+
+   <!-- Target: war -->
+   <target name="war">
+      <war destfile="${dist.dir}/webservice.war" webxml="${environment.web.dir}/WEB-INF/web.xml">
+         <fileset dir="${environment.web.dir}" />
+         <lib dir="${deploy.lib.dir}" />
+      </war>
+   </target>
+
+   <!-- Target: war -->
+   <target name="deploy-war">
+      <copy file="${dist.dir}/webservice.war" todir="${deploy.bin.dir}" />
+   </target>
+
+   <!-- Target: Token-Replace -->
+   <target name="finalize" description="Token replace for my component." depends="common-build.finalize">
+
+      <token-replace includes=".properties" dir="${deploy.config.dir}" token="@MYSQL_HOST@" value="${mysql.host}" />
+      <token-replace includes=".properties" dir="${deploy.config.dir}" token="@MYSQL_PORT@" value="${mysql.port}" />
+      <token-replace includes=".properties" dir="${deploy.config.dir}" token="@MYSQL_USERNAME@" value="${mysql.username}" />
+      <token-replace includes=".properties" dir="${deploy.config.dir}" token="@MYSQL_PASSWORD@" value="${mysql.password}" />
+      <token-replace includes=".properties" dir="${deploy.config.dir}" token="@MYSQL_DATABASE@" value="${mysql.database}" />
+
+   </target>
+
+
+</project>
