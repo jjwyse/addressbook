@@ -1,4 +1,4 @@
 com.jjw.webservice
 ==================
 
-Migrating SVN code to Github
+template for creating Spring MVC web services
