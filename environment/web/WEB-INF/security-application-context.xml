@@ -11,7 +11,7 @@
                         http://www.springframework.org/schema/security
                         http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 
-   <context:property-placeholder location="file://${WEBSERVICE_CONFIG_DIR}/com.jjw.webservice-application.properties" />
+   <context:property-placeholder location="file://${WEBSERVICE_CONFIG_DIR}/webservice-application.properties" />
 
    <security:http create-session="never" auto-config="false" realm="Restricted Service">
       <security:intercept-url pattern="/addressbook/**" access="ROLE_ADMIN" />

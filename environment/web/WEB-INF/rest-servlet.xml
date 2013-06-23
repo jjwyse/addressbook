@@ -10,7 +10,7 @@
    <context:component-scan base-package="com.jjw.webservice.controller" />
 
    <!-- Load in properties -->
-   <context:property-placeholder location="file://${WEBSERVICE_CONFIG_DIR}/com.jjw.webservice-application.properties" />
+   <context:property-placeholder location="file://${WEBSERVICE_CONFIG_DIR}/webservice-application.properties" />
 
    <!-- Loads in our JDBC driver -->
    <import resource="database-application-context.xml" />
