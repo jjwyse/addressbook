@@ -1,1 +1,3 @@
 /.eclipsescratch
+dist/*.war
+dist/*.jar
