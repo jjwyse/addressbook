@@ -6,35 +6,4 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-   <!-- Scan for @Component in this package -->
-   <context:component-scan base-package="com.jjw.webservice.controller" />
-
-   <!-- Load in properties -->
-   <context:property-placeholder location="file://${WEBSERVICE_CONFIG_DIR}/webservice-application.properties" />
-
-   <!-- Loads in our JDBC driver -->
-   <import resource="database-application-context.xml" />
-   <import resource="marshal-application-context.xml" />
-
-   <!-- To enable @RequestMapping process on type level and method level -->
-   <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
-
-   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-      <property name="messageConverters">
-         <list>
-            <ref bean="marshallingConverter" />
-         </list>
-      </property>
-   </bean>
-
-   <!-- JdbcTemplate used in our DAOs -->
-   <bean id="JdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-      <constructor-arg ref="DatabaseDriver" />
-   </bean>
-
-   <!-- Service to talk to database -->
-   <bean id="AddressBookService" class="com.jjw.webservice.service.AddressBookServiceIF" />
-
-   <!-- DAO to insert and retrieve information from database -->
-   <bean id="AddressBookJdbcDao" class="com.jjw.webservice.dao.impl.AddressBookJdbcDaoImpl" />
 </beans>

@@ -25,7 +25,7 @@
    <context-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>
-         /WEB-INF/security-application-context.xml
+         /WEB-INF/application-context.xml
       </param-value>
    </context-param>
 
@@ -41,23 +41,6 @@
 
    <listener>
       <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-   </listener>
-
-   <!-- Setup spring security to force people to authenticate against any services -->
-   <filter>
-      <filter-name>springSecurityFilterChain</filter-name>
-      <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-   </filter>
-
-   <filter-mapping>
-      <filter-name>springSecurityFilterChain</filter-name>
-      <url-pattern>/service/*</url-pattern>
-   </filter-mapping>
-
-   <!-- - Publishes events for session creation and destruction through the application context. Optional unless concurrent 
-      session control is being used. -->
-   <listener>
-      <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
    </listener>
 
 </web-app>
