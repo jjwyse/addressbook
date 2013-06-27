@@ -32,6 +32,9 @@
       <constructor-arg ref="DatabaseDriver" />
    </bean>
 
+   <!-- Service to talk to database -->
+   <bean id="AddressBookService" class="com.jjw.webservice.service.AddressBookServiceIF" />
+
    <!-- DAO to insert and retrieve information from database -->
    <bean id="AddressBookJdbcDao" class="com.jjw.webservice.dao.impl.AddressBookJdbcDaoImpl" />
 </beans>
