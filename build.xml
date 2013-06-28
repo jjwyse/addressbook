@@ -1,11 +1,11 @@
-<project name="webservice build file" basedir="." default="all">
+<project name="addressbook build file" basedir="." default="all">
    <description>
-      This is the build file for the webservice sub-component.
+      This is the build file for the addressbook sub-component.
    </description>
    <property environment="env" />
 
    <!-- Specify the cpc name -->
-   <property name="component" value="webservice" />
+   <property name="component" value="addressbook" />
    <echo message="${component}" />
 
    <!-- Grab user's personal properties -->
@@ -39,6 +39,7 @@
    <path id="libtodeploy">
       <pathelement path="${log4j.jar}" />
       <pathelement path="${commons.logging.jar}" />
+      <pathelement path="${jackson.jar}" />
       <pathelement path="${spring.aop.jar}" />
       <pathelement path="${spring.beans.jar}" />
       <pathelement path="${spring.core.jar}" />
@@ -53,7 +54,7 @@
       <pathelement path="${spring.security.core.jar}" />
       <pathelement path="${spring.security.taglibs.jar}" />
       <pathelement path="${spring.security.web.jar}" />
-      <pathelement path="${jjw.webservice.jar}" />
+      <pathelement path="${jjw.addressbook.jar}" />
       <pathelement path="${mysql.connector.jar}" />
    </path>
    <property name="lib.to.deploy" refid="libtodeploy" />
@@ -66,7 +67,7 @@
 
    <!-- Target: war -->
    <target name="war">
-      <war destfile="${dist.dir}/webservice.war" webxml="${environment.web.dir}/WEB-INF/web.xml">
+      <war destfile="${dist.dir}/addressbook.war" webxml="${environment.web.dir}/WEB-INF/web.xml">
          <fileset dir="${environment.web.dir}" />
          <lib dir="${deploy.lib.dir}" />
       </war>
@@ -74,7 +75,7 @@
 
    <!-- Target: war -->
    <target name="deploy-war">
-      <copy file="${dist.dir}/webservice.war" todir="${deploy.bin.dir}" />
+      <copy file="${dist.dir}/addressbook.war" todir="${deploy.bin.dir}" />
    </target>
 
    <!-- Target: Token-Replace -->

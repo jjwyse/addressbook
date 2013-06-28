@@ -21,7 +21,7 @@ public class AddressBookJdbcDaoImpl implements AddressBookJdbcDao
      * {@inheritDoc}
      */
     @Override
-    public void addPerson(Long id, Person person)
+    public void addPerson(Person person)
     {
         LOG.info("Attempting to insert Person: " + person + " into database table ADDRESS_BOOK_TABLE");
 
@@ -61,7 +61,7 @@ public class AddressBookJdbcDaoImpl implements AddressBookJdbcDao
      * {@inheritDoc}
      */
     @Override
-    public void updatePerson(Long id, Person person)
+    public void updatePerson(Long id)
     {
         LOG.error("Not implemented.");
     }

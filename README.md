@@ -1,4 +1,5 @@
-webservice
+addressbook
 ==================
 
-template for creating Spring MVC web services-doesn't currently work
+Spring MVC - REST
+  Example on how to create Spring MVC RESTful resource
