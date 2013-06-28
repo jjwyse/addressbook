@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="dist/|environment/|environment/web/|src/com/jjw/webservice/controller/|src/com/jjw/webservice/dao/|src/com/jjw/webservice/dao/impl/|src/com/jjw/webservice/dao/rowmapper/|src/com/jjw/webservice/pojo/|src/com/jjw/webservice/|src/com/jjw/|src/com/|src/|src/" kind="src" path=""/>
+	<classpathentry excluding="dist/|environment/|environment/web/|src/com/jjw/addressbook/controller/|src/com/jjw/addressbook/dao/|src/com/jjw/addressbook/dao/impl/|src/com/jjw/addressbook/dao/rowmapper/|src/com/jjw/addressbook/pojo/|src/com/jjw/addressbook/|src/com/jjw/|src/com/|src/|src/" kind="src" path=""/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
