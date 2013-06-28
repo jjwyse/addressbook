@@ -1,6 +1,6 @@
-package com.jjw.webservice.service;
+package com.jjw.addressbook.service;
 
-import com.jjw.webservice.pojo.Person;
+import com.jjw.addressbook.pojo.Person;
 
 public interface AddressBookServiceIF
 {

@@ -1,4 +1,4 @@
-package com.jjw.webservice.pojo;
+package com.jjw.addressbook.pojo;
 
 public class Person
 {
@@ -43,8 +43,7 @@ public class Person
     }
 
     /**
-     * @param name
-     *            the name to set
+     * @param name the name to set
      */
     public void setName(String name)
     {
@@ -60,8 +59,7 @@ public class Person
     }
 
     /**
-     * @param address
-     *            the address to set
+     * @param address the address to set
      */
     public void setAddress(String address)
     {
@@ -77,8 +75,7 @@ public class Person
     }
 
     /**
-     * @param city
-     *            the city to set
+     * @param city the city to set
      */
     public void setCity(String city)
     {
@@ -94,8 +91,7 @@ public class Person
     }
 
     /**
-     * @param state
-     *            the state to set
+     * @param state the state to set
      */
     public void setState(String state)
     {
@@ -111,8 +107,7 @@ public class Person
     }
 
     /**
-     * @param phoneNumber
-     *            the phoneNumber to set
+     * @param phoneNumber the phoneNumber to set
      */
     public void setPhoneNumber(String phoneNumber)
     {

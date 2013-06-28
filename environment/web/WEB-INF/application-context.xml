@@ -1,13 +1,22 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="
         http://www.springframework.org/schema/beans     
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/mvc   
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-   <!-- Scan for @Component in this package -->
-   <context:component-scan base-package="com.jjw.webservice.controller" />
+   <!-- Allow for annotations. -->
+   <context:annotation-config />
+
+   <mvc:resources location="/resources/**" mapping="/resources/" />
+
+   <mvc:annotation-driven />
+
+   <!-- Scan for @Controller in this package -->
+   <context:component-scan base-package="com.jjw.addressbook.controller" />
 
    <!-- Load in properties -->
    <context:property-placeholder location="file://${ADDRESSBOOK_CONFIG_DIR}/addressbook-application.properties" />
@@ -24,8 +33,9 @@
    </bean>
 
    <!-- Service to talk to database -->
-   <bean id="AddressBookService" class="com.jjw.webservice.service.AddressBookServiceIF" />
+   <bean id="AddressBookService" class="com.jjw.addressbook.service.impl.AddressBookServiceImpl" />
 
    <!-- DAO to insert and retrieve information from database -->
-   <bean id="AddressBookJdbcDao" class="com.jjw.webservice.dao.impl.AddressBookJdbcDaoImpl" />
+   <bean id="AddressBookJdbcDao" class="com.jjw.addressbook.dao.impl.AddressBookJdbcDaoImpl" />
+
 </beans>

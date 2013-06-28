@@ -1,6 +1,6 @@
-package com.jjw.webservice.dao;
+package com.jjw.addressbook.dao;
 
-import com.jjw.webservice.pojo.Person;
+import com.jjw.addressbook.pojo.Person;
 
 /**
  * Interface that talks with the database and keeps track of people's address information

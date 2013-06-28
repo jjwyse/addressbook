@@ -1,12 +1,12 @@
-package com.jjw.webservice.dao.impl;
+package com.jjw.addressbook.dao.impl;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.jjw.webservice.dao.AddressBookJdbcDao;
-import com.jjw.webservice.dao.rowmapper.PersonRowMapper;
-import com.jjw.webservice.pojo.Person;
+import com.jjw.addressbook.dao.AddressBookJdbcDao;
+import com.jjw.addressbook.dao.rowmapper.PersonRowMapper;
+import com.jjw.addressbook.pojo.Person;
 
 public class AddressBookJdbcDaoImpl implements AddressBookJdbcDao
 {
@@ -42,7 +42,7 @@ public class AddressBookJdbcDaoImpl implements AddressBookJdbcDao
     {
         LOG.info("Attempting to look up person from address book with ID: " + id);
 
-        String sql = "SELECT * FROM ADDRESS_BOOK_TABLE WHERE PHONE_NUMBER = ?";
+        String sql = "SELECT * FROM ADDRESS_BOOK_TABLE WHERE ID = ?";
         LOG.trace(sql);
 
         return myJdbcTemplate.queryForObject(sql, new Object[] { id }, new PersonRowMapper());

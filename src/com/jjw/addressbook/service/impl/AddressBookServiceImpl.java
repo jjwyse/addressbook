@@ -1,10 +1,10 @@
-package com.jjw.webservice.service.impl;
+package com.jjw.addressbook.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.jjw.webservice.dao.AddressBookJdbcDao;
-import com.jjw.webservice.pojo.Person;
-import com.jjw.webservice.service.AddressBookServiceIF;
+import com.jjw.addressbook.dao.AddressBookJdbcDao;
+import com.jjw.addressbook.pojo.Person;
+import com.jjw.addressbook.service.AddressBookServiceIF;
 
 public class AddressBookServiceImpl implements AddressBookServiceIF
 {

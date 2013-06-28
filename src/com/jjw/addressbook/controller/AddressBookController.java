@@ -1,4 +1,4 @@
-package com.jjw.webservice.controller;
+package com.jjw.addressbook.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.jjw.webservice.pojo.Person;
-import com.jjw.webservice.service.AddressBookServiceIF;
+import com.jjw.addressbook.pojo.Person;
+import com.jjw.addressbook.service.AddressBookServiceIF;
 
 @Controller
-@RequestMapping("addressbook")
+@RequestMapping("api")
 public class AddressBookController
 {
     /** Logger instance. */
-    Logger LOG = Logger.getLogger(AddressBookController.class);
+    private static final Logger LOG = Logger.getLogger(AddressBookController.class);
 
     @Autowired
     AddressBookServiceIF myAddressBookService;
@@ -27,9 +27,9 @@ public class AddressBookController
      * @param personId The ID of the person
      * @return The person or null
      */
-    @RequestMapping("/addressbook/{id}")
+    @RequestMapping("/{id}")
     @ResponseBody
-    public Person getPerson(@PathVariable long id)
+    public Person getPerson(@PathVariable("id") Long id)
     {
         LOG.info("Handling getPerson request");
 

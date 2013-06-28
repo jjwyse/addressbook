@@ -1,11 +1,11 @@
-package com.jjw.webservice.dao.rowmapper;
+package com.jjw.addressbook.dao.rowmapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.jjw.webservice.pojo.Person;
+import com.jjw.addressbook.pojo.Person;
 
 /**
  * Maps a response from the database to our Person object
