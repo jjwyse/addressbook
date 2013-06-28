@@ -41,6 +41,7 @@
       <pathelement path="${commons.logging.jar}" />
       <pathelement path="${jackson.core.jar}" />
       <pathelement path="${jackson.mapper.jar}" />
+      <pathelement path="${jstl.jar}" />
       <pathelement path="${spring.aop.jar}" />
       <pathelement path="${spring.beans.jar}" />
       <pathelement path="${spring.core.jar}" />
