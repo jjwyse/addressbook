@@ -114,4 +114,10 @@ public class Person
         myPhoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString()
+    {
+        return "name: " + myName + ", address: " + myAddress + ", city: " + myCity + ", state: " + myState
+                + ", phoneNumber: " + myPhoneNumber;
+    }
 }
