@@ -1,25 +1,31 @@
 package com.jjw.addressbook.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.ArrayList;
 
-import com.jjw.addressbook.dao.AddressBookJdbcDao;
 import com.jjw.addressbook.pojo.Person;
 import com.jjw.addressbook.service.AddressBookServiceIF;
 
+/**
+ * In memory representation of our address book
+ * 
+ * @author jjwyse
+ */
 public class AddressBookServiceImpl implements AddressBookServiceIF
 {
-    @Autowired
-    private AddressBookJdbcDao myAddressBookJdbcDao;
+    int myId = 0;
+
+    private ArrayList<Person> myAddressBook = new ArrayList<Person>();
 
     @Override
     public Person getPerson(long id)
     {
-        return myAddressBookJdbcDao.getPerson(id);
+        return myAddressBook.get((int) id);
     }
 
     @Override
     public void addPerson(Person person)
     {
-        myAddressBookJdbcDao.addPerson(person);
+        myAddressBook.add(person);
+        myId++;
     }
 }
