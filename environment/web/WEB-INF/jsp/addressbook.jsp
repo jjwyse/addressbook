@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Spring MVC - Ajax</title>     
+<title>Address Book</title>     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/addressbook/resources/css/addressbook.css"/>
 </head>
