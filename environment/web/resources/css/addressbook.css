@@ -3,7 +3,7 @@ body {
    font: helvetica;
 }
 
-      #container {
+#container {
    width: 500px;
    background-color: #fff;
    margin: 30px auto;
@@ -12,25 +12,25 @@ body {
    box-shadow: 5px;
 }
 
-      .green {
+.green {
    font-weight: bold;
    color: green;
 }
 
-      .message {
+.message {
    margin-bottom: 10px;
 }
 
-      label {
+label {
    width: 70px;
    display: inline-block;
 }
 
-      .hide {
+.hide {
    display: none;
 }
 
-      .error {
+.error {
    color: red;
    font-size: 0.8em;
 }

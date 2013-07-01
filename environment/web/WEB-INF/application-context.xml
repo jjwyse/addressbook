@@ -11,7 +11,7 @@
    <!-- Allow for annotations. -->
    <context:annotation-config />
 
-   <mvc:resources location="/resources/**" mapping="/resources/" />
+   <mvc:resources location="/resources/" mapping="/resources/**" />
 
    <mvc:annotation-driven />
 

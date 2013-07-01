@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
  
-<!DOCTYPE HTML>
 <html>
 <head>
-<title>Address Book</title>     
+<title>Joshua Wyse | Address Book</title>
+<link rel="shortcut icon" href="/addressbook/resources/images/favicon.ico"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/addressbook/resources/css/addressbook.css"/>
 </head>
