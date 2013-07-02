@@ -14,7 +14,7 @@
 	<classpathentry kind="lib" path="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-webmvc-portlet-3.2.0.RC2.jar"/>
 	<classpathentry kind="lib" path="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-webmvc-3.2.0.RC2-sources.jar"/>
 	<classpathentry kind="lib" path="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-webmvc-3.2.0.RC2-javadoc.jar"/>
-	<classpathentry kind="lib" path="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-webmvc-3.2.0.RC2.jar"/>
+	<classpathentry kind="lib" path="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-webmvc-3.2.0.RC2.jar" sourcepath="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-webmvc-3.2.0.RC2-sources.jar"/>
 	<classpathentry kind="lib" path="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-web-3.2.0.RC2-sources.jar"/>
 	<classpathentry kind="lib" path="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-web-3.2.0.RC2-javadoc.jar"/>
 	<classpathentry kind="lib" path="/home/jjwyse/workspace/cots/spring-framework-3.2.0.RC2/libs/spring-web-3.2.0.RC2.jar"/>
