@@ -26,7 +26,6 @@ public class Person
      */
     public Person(String name, String address, String city, String state, String phoneNumber)
     {
-        super();
         myName = name;
         myAddress = address;
         myCity = city;
